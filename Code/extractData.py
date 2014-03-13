@@ -141,7 +141,7 @@ def getGroundData(testerName, phoneNum, date, gmtConversion, groundFilePath):
 
     groundData = []
     with open(groundFilePath, 'rU') as csvfile:
-        for row in csv.reader(csvfile, delimiter = ','):
+        for row in csv.reader(csvfile, delimiter = '\t'):
             if row[1] == phoneNum and row[4] == testerName:
                 if row[-2] == 'Yes':
                     time = epochGroundTime(row[0])
@@ -215,20 +215,20 @@ def mergeData(gpsData, groundData):
 
 # Personal details, change as appropriate
 
-testerName = 'Vij'       # Should be the same as that listed in the ODK form
-phoneNum = '5107250744'  # 10-digit number with no brackets, hyphens or spaces
+testerName = 'Rory'       # Should be the same as that listed in the ODK form
+phoneNum = '5107250619'  # 10-digit number with no brackets, hyphens or spaces
 date = '02272014'        # MMDDYYYY format of day for which you wish to extract data
 
 gmtConversion = -8       # Difference in hours between local time and UTC time, remember to change for daylight savings
 
 # Base directory where you clone the repository, change as appropriate
-filePath = '/Users/biogeme/Desktop/Vij/Academics/Current Research/'
+filePath = '/home/tliimfee/Documents/'
 
 # Directory where you saved the file with GPS traces, change as appropriate
-gpsFilePath = filePath + 'Travel-Diary/Data/Ground Truth/' + 'gaeandroid.txt'
+gpsFilePath = '/home/tliimfee/Downloads/gaeandroid.txt'
 
 # Directory where you've saved the ODK file with just the ground truth, change as appropriate
-groundFilePath = filePath + 'Travel-Diary/Data/Ground Truth/' + 'Travel_and_Activity_Diary_v2_results.csv'
+groundFilePath = '/home/tliimfee/Downloads/Travel_and_Activity_Diary_v2_results.csv'
 
 # DON'T CHANGE ANYTHING BELOW THIS!
 
